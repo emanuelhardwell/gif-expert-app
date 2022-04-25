@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-export const AddCategory = () => {
-  const [inputValue, setInputValue] = useState("Hola mundo");
+export const AddCategory = ({ setCategories }) => {
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -9,7 +10,15 @@ export const AddCategory = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    // Se hace de esta forma ya que unicamente estamos pasando la FUNCION setCategories
+    // y usamos un CALLBACK para tener la referencia de de las categorias en este caso
+    // o bien podriamos pasar por las PROPS a CATEGORIES y quedaria asi ------ >
+    //setCategories([...categories, "HunterXHunter"]);
+
+    if (inputValue.trim().length > 2) {
+      setCategories((cats) => [...cats, inputValue]);
+      setInputValue("");
+    }
   };
 
   // RETURN
@@ -17,6 +26,7 @@ export const AddCategory = () => {
     <>
       <form onSubmit={handleSubmit}>
         <input
+          className="form-control"
           type="text"
           name="buscar"
           value={inputValue}
@@ -25,4 +35,8 @@ export const AddCategory = () => {
       </form>
     </>
   );
+};
+
+AddCategory.propTypes = {
+  setCategories: PropTypes.func.isRequired,
 };

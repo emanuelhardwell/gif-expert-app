@@ -1,18 +1,15 @@
 import React, { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState([
-    "One Punch",
-    "Samurai X",
-    "Dragon Ball",
-  ]);
+  const [categories, setCategories] = useState(["One Punch"]);
 
-  const handleAdd = () => {
-    setCategories([...categories, "HunterXHunter"]);
-    // forma 2 de hacerlo
-    // setCategories((cats) => [...cats, "HunterXHunter"]);
-  };
+  // const handleAdd = () => {
+  //   setCategories([...categories, "HunterXHunter"]);
+  //   // forma 2 de hacerlo
+  //   // setCategories((cats) => [...cats, "HunterXHunter"]);
+  // };
 
   //   RETURN
   return (
@@ -26,25 +23,20 @@ export const GifExpertApp = () => {
         </div>
 
         <div className="row">
-          <div className="col-md-12">
-            <AddCategory />
+          <div className="col-md-4">
+            <AddCategory setCategories={setCategories} />
           </div>
         </div>
 
-        <div className="row">
-          <ol>
-            {categories.map((category) => (
-              <li key={category}> {category} </li>
-            ))}
-          </ol>
+        <div className="row mt-3  bg-primary">
+          {categories.map((category) => (
+            <GifGrid key={category} category={category} />
+          ))}
         </div>
 
         <div className="row">
           <div className="col-md-4">
-            <button className="btn btn-primary" onClick={handleAdd}>
-              {" "}
-              Agregar category{" "}
-            </button>
+            <button className="btn btn-primary"> Agregar category </button>
           </div>
         </div>
       </div>
