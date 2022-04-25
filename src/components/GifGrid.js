@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { getGifs } from "../helpers/getGifs";
+import React from "react";
+import { useFetchGifs } from "../hooks/useFetchGifs";
+// import { getGifs } from "../helpers/getGifs";
 import { GifGridItem } from "./GifGridItem";
 
 export const GifGrid = ({ category }) => {
-  const [images, setImages] = useState([]);
+  //   const [images, setImages] = useState([]);
 
-  useEffect(() => {
-    getGifs(category).then((gif) => setImages(gif));
-  }, []);
+  //   useEffect(() => {
+  //     getGifs(category).then((gif) => setImages(gif));
+  //   }, []);
 
   //   const getGifs = async () => {
   //     const url =
@@ -28,10 +29,14 @@ export const GifGrid = ({ category }) => {
   //     setImages(gifs);
   //   };
 
+  //   SE EMPIEZA A UTILIZAR EL CUSTOM HOOK
+  const { data: images, loading } = useFetchGifs(category);
+
   // RETURN
   return (
     <>
       <h3 className="text-center"> {category} </h3>
+      {loading && "Cargando data"}
       <div className="container">
         <div className="row bg-dark">
           <div className="col-md-4 mb-3">
