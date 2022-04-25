@@ -16,7 +16,7 @@ export const AddCategory = ({ setCategories }) => {
     //setCategories([...categories, "HunterXHunter"]);
 
     if (inputValue.trim().length > 2) {
-      setCategories((cats) => [...cats, inputValue]);
+      setCategories((cats) => [inputValue, ...cats]);
       setInputValue("");
     }
   };
@@ -29,6 +29,7 @@ export const AddCategory = ({ setCategories }) => {
           className="form-control"
           type="text"
           name="buscar"
+          placeholder="Buscar por categoria"
           value={inputValue}
           onChange={handleInputChange}
         />

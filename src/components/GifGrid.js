@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from "react";
+import { getGifs } from "../helpers/getGifs";
 import { GifGridItem } from "./GifGridItem";
 
 export const GifGrid = ({ category }) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    getGifs();
+    getGifs(category).then((gif) => setImages(gif));
   }, []);
 
-  const getGifs = async () => {
-    const url =
-      "https://api.giphy.com/v1/gifs/search?q=goku&limit=8&api_key=EMkLUTqDMhIksWGffC42PtHNNshPjgwj";
-    const resp = await fetch(url);
-    const { data } = await resp.json();
-    // console.log(data);
+  //   const getGifs = async () => {
+  //     const url =
+  //       "https://api.giphy.com/v1/gifs/search?q=goku&limit=8&api_key=EMkLUTqDMhIksWGffC42PtHNNshPjgwj";
+  //     const resp = await fetch(url);
+  //     const { data } = await resp.json();
+  //     // console.log(data);
 
-    const gifs = data.map((image) => {
-      return {
-        id: image.id,
-        title: image.title,
-        url: image.images?.downsized?.url,
-      };
-    });
+  //     const gifs = data.map((image) => {
+  //       return {
+  //         id: image.id,
+  //         title: image.title,
+  //         url: image.images?.downsized?.url,
+  //       };
+  //     });
 
-    console.log(gifs);
-    setImages(gifs);
-  };
+  //     console.log(gifs);
+  //     setImages(gifs);
+  //   };
 
   // RETURN
   return (

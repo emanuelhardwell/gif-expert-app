@@ -13,7 +13,7 @@ export const GifExpertApp = () => {
 
   //   RETURN
   return (
-    <div className="m-3">
+    <div className="m-2">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
