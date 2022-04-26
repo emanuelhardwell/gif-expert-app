@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente AddCategory.js Deberia mostrarse el componente correctamente 1`] = `
+<Fragment>
+  <form
+    onSubmit={[Function]}
+  >
+    <p>
+       
+       
+    </p>
+    <input
+      className="form-control"
+      name="buscar"
+      onChange={[Function]}
+      placeholder="Buscar por categoria"
+      type="text"
+      value=""
+    />
+  </form>
+</Fragment>
+`;
