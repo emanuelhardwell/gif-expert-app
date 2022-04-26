@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente GifExpertApp.js Deberia estar el snapshot cprrectamente 1`] = `
+<div
+  className="m-2"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-12"
+      >
+        <h1
+          className="text-center"
+        >
+          GifExpertApp
+        </h1>
+        <hr />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-4"
+      >
+        <AddCategory
+          setCategories={[Function]}
+        />
+      </div>
+    </div>
+    <div
+      className="row mt-3  bg-primary"
+    />
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-4"
+      >
+        <button
+          className="btn btn-primary"
+        >
+           Agregar category 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Pruebas en el componente GifExpertApp.js Deberia estar el snapshot cprrectamente y mostrar el numero de GIFGRID 1`] = `
+<div
+  className="m-2"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-12"
+      >
+        <h1
+          className="text-center"
+        >
+          GifExpertApp
+        </h1>
+        <hr />
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-4"
+      >
+        <AddCategory
+          setCategories={[Function]}
+        />
+      </div>
+    </div>
+    <div
+      className="row mt-3  bg-primary"
+    >
+      <GifGrid
+        category="Goku"
+        key="Goku"
+      />
+      <GifGrid
+        category="Kakaroto"
+        key="Kakaroto"
+      />
+      <GifGrid
+        category="Vegeta"
+        key="Vegeta"
+      />
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-4"
+      >
+        <button
+          className="btn btn-primary"
+        >
+           Agregar category 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
