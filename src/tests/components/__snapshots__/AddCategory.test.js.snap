@@ -5,10 +5,7 @@ exports[`Pruebas en el componente AddCategory.js Deberia mostrarse el componente
   <form
     onSubmit={[Function]}
   >
-    <p>
-       
-       
-    </p>
+    <p />
     <input
       className="form-control"
       name="buscar"

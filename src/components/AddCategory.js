@@ -6,7 +6,7 @@ export const AddCategory = ({ setCategories }) => {
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
-    console.log("handleInputChange ejecutado ...", inputValue);
+    console.log("handleInputChange ...");
   };
 
   const handleSubmit = (e) => {
@@ -15,6 +15,9 @@ export const AddCategory = ({ setCategories }) => {
     // y usamos un CALLBACK para tener la referencia de de las categorias en este caso
     // o bien podriamos pasar por las PROPS a CATEGORIES y quedaria asi ------ >
     //setCategories([...categories, "HunterXHunter"]);
+
+    console.log("handleSubmit ...");
+    console.log("---- " + inputValue + " ----");
 
     if (inputValue.trim().length > 2) {
       setCategories((cats) => [inputValue, ...cats]);
@@ -26,7 +29,7 @@ export const AddCategory = ({ setCategories }) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <p> {inputValue} </p>
+        <p>{inputValue}</p>
         <input
           className="form-control"
           type="text"

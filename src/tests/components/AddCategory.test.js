@@ -32,4 +32,21 @@ describe("Pruebas en el componente AddCategory.js", () => {
 
     expect(setCategories).not.toHaveBeenCalled();
   });
+
+  // 1.- simular el inputchange
+  // 2.- simular el submit
+  // 3.- setCategories se debe de haber llamado
+  // 4.- el valor del input debe de estar vacio ""
+  test("Deberia de ejecutarse la funcion SUBMIT", () => {
+    const value = "Hola bebe";
+
+    wrapper.find("input").simulate("change", { target: { value } });
+
+    wrapper.find("form").simulate("submit", { preventDefault() {} });
+    expect(setCategories).toHaveBeenCalled();
+    expect(setCategories).toHaveBeenCalledTimes(1);
+
+    // expect(wrapper.find("p").text().trim()).toBe("");
+    expect(wrapper.find("input").prop("value")).toBe("");
+  });
 });
