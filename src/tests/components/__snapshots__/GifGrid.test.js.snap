@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el componente GifGrid.js should mostrar el snapshot correctamente 1`] = `
+<Fragment>
+  <h3
+    className="text-center"
+  >
+     
+    One Punch
+     
+  </h3>
+  Cargando data
+  <div
+    className="container"
+  >
+    <div
+      className="row bg-dark"
+    >
+      <div
+        className="col-md-4 mb-3"
+      />
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[`Pruebas en el componente GifGrid.js should mostrar el snapshot correctamente, ya con una CATEGORY 1`] = `
+<Fragment>
+  <h3
+    className="text-center"
+  >
+     
+    One Punch
+     
+  </h3>
+  <div
+    className="container"
+  >
+    <div
+      className="row bg-dark"
+    >
+      <div
+        className="col-md-4 mb-3"
+      >
+        <GifGridItem
+          id="abc"
+          key="abc"
+          title="paco el chato"
+          url="http://example.com/paco.jpg"
+        />
+      </div>
+    </div>
+  </div>
+</Fragment>
+`;
