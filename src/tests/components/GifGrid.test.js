@@ -32,4 +32,20 @@ describe("Pruebas en el componente GifGrid.js", () => {
     const wrapper = shallow(<GifGrid category={category} />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  test("should mostrar el snapshot correctamente, ya con una CATEGORY... forma MAS ROBUSTA", () => {
+    const gifs = [
+      { id: "abc", title: "paco el chato", url: "http://example.com/paco.jpg" },
+    ];
+
+    useFetchGifs.mockReturnValue({
+      data: gifs,
+      loading: false,
+    });
+
+    const wrapper = shallow(<GifGrid category={category} />);
+    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find("p").exists()).toBe(false);
+    expect(wrapper.find("GifGridItem").length).toBe(gifs.length);
+  });
 });
